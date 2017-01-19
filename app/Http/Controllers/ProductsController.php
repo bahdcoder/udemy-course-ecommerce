@@ -141,7 +141,14 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        Product::destroy($id);
+        $product = Product::find($id);
+        
+        if(file_exists($product->image))
+        {
+            unlink($product->image);
+        }
+
+        $product->delete();
 
         Session::flash('success', 'Product deleted.');
 
