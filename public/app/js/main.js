@@ -611,13 +611,13 @@ var CRUMINA = {};
     });
 
 
-    $('.quantity-plus').on('click', function () {
+    $('.quantity-plus-d').on('click', function () {
         var val = parseInt($(this).prev('input').val());
         $(this).prev('input').val(val + 1).change();
         return false;
     });
 
-    $('.quantity-minus').on('click', function () {
+    $('.quantity-minus-d').on('click', function () {
         var val = parseInt($(this).next('input').val());
         if (val !== 1) {
             $(this).next('input').val(val - 1).change();
